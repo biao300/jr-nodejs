@@ -18,5 +18,10 @@ exports.connectToDB = () => {
     db.on('diconnected', () =>{ 
         console.log('diconnected');
     });
-    mongoose.connect(connectionString);
+
+    // for warning, fit new version
+    mongoose.connect(connectionString, {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true
+    });
 };
