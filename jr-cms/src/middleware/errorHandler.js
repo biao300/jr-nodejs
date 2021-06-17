@@ -1,5 +1,4 @@
 module.exports = (error, req, res, next) => {
-    console.log(error.name);
     if (error.name === 'ValidationError') {
         if (process.env.NODE_ENV === 'production') {
             // object manipulation, this is a basic knowledge
@@ -15,6 +14,7 @@ module.exports = (error, req, res, next) => {
     }
 
     // todo: catch other errors
+    console.log(error);
 
     // for those errors we dont handle, this is not good, should avoid this!!
     // log => use winston to send to monitor platform

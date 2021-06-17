@@ -1,4 +1,5 @@
 /*
+ * this is a data storage file since we haven't db yet
  * {
  *    id: number,
  *    description: string,
@@ -8,13 +9,14 @@
 const tasks = [];
 let id = 1;
 
+// Create
 function addTask({description}) {
     const task = {description, id: id++, done: false};
     tasks.push(task);
     return task;
 }
 
-// read all
+// Read all
 function getAllTask({description}) {
     if (description) {
         const filtedTasks = tasks.filter(i=>i.description.includes(description));
@@ -25,12 +27,12 @@ function getAllTask({description}) {
     }
 }
 
-
-// read one
+// Read one
 function getTaskById(id) {
     return tasks.find(i=>i.id === Number(id));
 }
 
+// Update
 function updateTaskById(id, {done, description}) {
     const task = getTaskById(id);
     if (task) {
@@ -46,6 +48,7 @@ function updateTaskById(id, {done, description}) {
     return task;
 }
 
+// Delete
 function deleteTaskById(id) {
     const index = getTaskIndexById(id);
     tasks.splice(index, 1);

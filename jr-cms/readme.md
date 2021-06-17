@@ -31,6 +31,7 @@ mkdir utils
 write code into app.js
 
 npm i -D nodemon
+npm i joi
 
 #
 nodemon is a tool that helps develop node. js based applications by automatically restarting the node application when file changes in the directory are detected.
@@ -51,3 +52,17 @@ DB_HOST
 DB_PORT
 DB_DATABASE
 
+// how to debug in VSCode?
+package.json => scripts, add
+"debug": "nodemon --inspect src/app.js"
+
+set vscode:
+ctrl(command)+shift+P
+search "toggle: auto attach" click
+select only with flag
+
+
+for JWT
+npm i jsonwebtoken
+// add SALT
+npm i bcrypt

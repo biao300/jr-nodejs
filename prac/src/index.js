@@ -21,3 +21,9 @@ app.use(routes);
 app.listen(3000, () => {
     console.log('server listening on port 3000');
 });
+
+
+// teacher's source:
+// https://github.com/LazeBear
+// test front page:
+// https://lazebear.github.io/jr-todos/
